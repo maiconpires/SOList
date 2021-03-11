@@ -342,7 +342,13 @@ begin
   FormList    := TSOList<TVertScrollBox, TFraForm>.New(vsbForm);
   DataList := TSOList<TVertScrollBox, TfraPeople>.New(vsbDataset);
 
-  mCliente.LoadFromFile('./peossoas.dat');
+  if FileExists('../../Data/peossoas.dat') then
+    mCliente.LoadFromFile('../../Data/peossoas.dat')
+  else begin
+    ShowMessage('File PESSOAS.DAT not found, please find the file in DATA path.');
+    if od.Execute then
+      mCliente.LoadFromFile(od.FileName);
+  end;
   mCliente.Open;
 end;
 
