@@ -305,11 +305,11 @@ begin
         TControl(FObject).EndUpdate;
         TControl(FObject).Visible := True;
         ShowItem(Item, 0.5, 0.3+(Counter*0.2));
-      end);
 
-      if Assigned(OnFinish) then
-        OnFinish(ASource);
-    end)
+        if Assigned(OnFinish) then
+          OnFinish(ASource);
+      end);
+   end)
   .Start;
 end;
 
