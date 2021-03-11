@@ -1,0 +1,48 @@
+object fraProduct: TfraProduct
+  Size.Width = 408.000000000000000000
+  Size.Height = 94.000000000000000000
+  Size.PlatformDefault = False
+  object Content: TRectangle
+    Align = Contents
+    Fill.Color = claLightblue
+    Opacity = 0.800000011920929000
+    Size.Width = 408.000000000000000000
+    Size.Height = 94.000000000000000000
+    Size.PlatformDefault = False
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+  end
+  object lblAmount: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 324.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 72.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    TextSettings.HorzAlign = Trailing
+    Text = '10'
+    TabOrder = 2
+  end
+  object lblDescription: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 379.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.VertAlign = Leading
+    Text = 'Produtct Description'
+    TabOrder = 3
+  end
+  object lblTitle: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 306.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    Text = 'Product'
+    TabOrder = 1
+  end
+end

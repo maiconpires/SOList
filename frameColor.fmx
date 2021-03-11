@@ -1,0 +1,27 @@
+object fraColor: TfraColor
+  Size.Width = 356.000000000000000000
+  Size.Height = 72.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = claSandybrown
+    HitTest = False
+    Opacity = 0.800000011920929000
+    Size.Width = 356.000000000000000000
+    Size.Height = 72.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Thickness = 0.500000000000000000
+  end
+  object Label1: TLabel
+    Align = Center
+    AutoSize = True
+    StyledSettings = [Family, Style, FontColor]
+    Size.Width = 90.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 18.000000000000000000
+    TextSettings.WordWrap = False
+    Text = 'Just a color'
+    TabOrder = 1
+  end
+end

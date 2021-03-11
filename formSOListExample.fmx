@@ -1,0 +1,595 @@
+object SOListExample: TSOListExample
+  Left = 0
+  Top = 0
+  Caption = 'SOList Example'
+  ClientHeight = 480
+  ClientWidth = 1335
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 1335.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 3
+    TabPosition = PlatformDefault
+    Sizes = (
+      1335s
+      454s
+      1335s
+      454s
+      1335s
+      454s
+      1335s
+      454s)
+    object tbiProduct: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 130.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Product - Simple List'
+      ExplicitSize.cx = 130.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object vsbProduct: TVertScrollBox
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 1088.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 1088.000000000000000000
+        Viewport.Height = 414.000000000000000000
+      end
+      object Layout1: TLayout
+        Align = Left
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object btnProductLoad: TButton
+          Position.X = 8.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 0
+          Text = 'Load List'
+          OnClick = btnProductLoadClick
+        end
+        object btnProductDelete: TButton
+          Position.X = 10.000000000000000000
+          Position.Y = 192.000000000000000000
+          Size.Width = 175.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Delete Index 1'
+          OnClick = btnProductDeleteClick
+        end
+        object btnProductClear: TButton
+          Position.X = 104.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 1
+          Text = 'Clear List'
+          OnClick = btnProductClearClick
+        end
+        object gbProductAdd: TGroupBox
+          Position.X = 8.000000000000000000
+          Position.Y = 48.000000000000000000
+          Size.Width = 185.000000000000000000
+          Size.Height = 133.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Add'
+          TabOrder = 3
+          object edtProductAmount: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 2
+            Position.X = 10.000000000000000000
+            Position.Y = 74.000000000000000000
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 165.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Amount'
+          end
+          object edtProductDescription: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 1
+            Position.X = 10.000000000000000000
+            Position.Y = 47.000000000000000000
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 165.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Description'
+          end
+          object edtProductName: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 0
+            Position.X = 10.000000000000000000
+            Position.Y = 20.000000000000000000
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 20.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 165.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Product Name'
+          end
+          object btnProductAdd: TButton
+            Align = Top
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 101.000000000000000000
+            Size.Width = 165.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Add'
+            OnClick = btnProductAddClick
+          end
+        end
+        object GroupBox1: TGroupBox
+          Position.X = 8.000000000000000000
+          Position.Y = 224.000000000000000000
+          Size.Width = 185.000000000000000000
+          Size.Height = 161.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Find Item'
+          TabOrder = 4
+          object edtProductSearch: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Top
+            TabOrder = 0
+            Position.X = 10.000000000000000000
+            Position.Y = 20.000000000000000000
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 20.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Size.Width = 165.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'Item Name (Ex.: ProductItem_Test'
+          end
+          object btnProductRemove: TButton
+            Position.X = 8.000000000000000000
+            Position.Y = 47.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Text = 'Remove'
+            OnClick = btnProductRemoveClick
+          end
+          object btnProductChange: TButton
+            Position.X = 8.000000000000000000
+            Position.Y = 73.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = 'Any Change'
+            OnClick = btnProductChangeClick
+          end
+          object btnProductShowItem: TButton
+            Position.X = 8.000000000000000000
+            Position.Y = 125.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            Text = 'Show Item Again'
+            OnClick = btnProductShowItemClick
+          end
+          object btnProductHide: TButton
+            Position.X = 8.000000000000000000
+            Position.Y = 99.000000000000000000
+            Size.Width = 169.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Hide Item'
+            OnClick = btnProductHideClick
+          end
+        end
+      end
+    end
+    object tbiDragDrop: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 99.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Drag and Drop'
+      ExplicitSize.cx = 99.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object vsbColor: TVertScrollBox
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 1088.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 1088.000000000000000000
+        Viewport.Height = 414.000000000000000000
+      end
+      object Layout2: TLayout
+        Align = Left
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object btnColorLoad: TButton
+          Position.X = 8.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 2
+          Text = 'Load List'
+          OnClick = btnColorLoadClick
+        end
+        object btnColorClear: TButton
+          Position.X = 104.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 3
+          Text = 'Clear List'
+          OnClick = btnColorClearClick
+        end
+        object btnColorStartDrag: TButton
+          Position.X = 8.000000000000000000
+          Position.Y = 48.000000000000000000
+          TabOrder = 0
+          Text = 'Start Drag'
+          OnClick = btnColorStartDragClick
+        end
+        object btnColorStopDrag: TButton
+          Position.X = 104.000000000000000000
+          Position.Y = 48.000000000000000000
+          TabOrder = 1
+          Text = 'Stop Drag'
+          OnClick = btnColorStopDragClick
+        end
+      end
+    end
+    object tbiFormList: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Form List'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object vsbForm: TVertScrollBox
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 1088.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 1088.000000000000000000
+        Viewport.Height = 414.000000000000000000
+      end
+      object Layout3: TLayout
+        Align = Left
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object btnFormLoad: TButton
+          Position.X = 8.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 1
+          Text = 'Load List'
+          OnClick = btnFormLoadClick
+        end
+        object btnFormClear: TButton
+          Position.X = 104.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 2
+          Text = 'Clear List'
+          OnClick = btnFormClearClick
+        end
+        object btnFormShowHidden: TButton
+          Position.X = 8.000000000000000000
+          Position.Y = 48.000000000000000000
+          Size.Width = 177.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Show Hidden Items'
+          OnClick = btnFormShowHiddenClick
+        end
+      end
+    end
+    object tbiDataset: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 120.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Load From Dataset'
+      ExplicitSize.cx = 120.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Layout4: TLayout
+        Align = Left
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 197.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object btnDatasetLoad: TButton
+          Position.X = 8.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 0
+          Text = 'Load List'
+          OnClick = btnDatasetLoadClick
+        end
+        object btnDatasetClear: TButton
+          Position.X = 104.000000000000000000
+          Position.Y = 16.000000000000000000
+          TabOrder = 1
+          Text = 'Clear List'
+          OnClick = btnDatasetClearClick
+        end
+      end
+      object vsbDataset: TVertScrollBox
+        Align = Client
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 505.000000000000000000
+        Size.Height = 414.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 505.000000000000000000
+        Viewport.Height = 414.000000000000000000
+      end
+      object GroupBox2: TGroupBox
+        Align = Right
+        Position.X = 752.000000000000000000
+        Size.Width = 583.000000000000000000
+        Size.Height = 454.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Just a viewer of dataset to compare'
+        TabOrder = 2
+        object Grid1: TGrid
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          CanFocus = True
+          ClipChildren = True
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 20.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 563.000000000000000000
+          Size.Height = 285.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          RowCount = 0
+          Viewport.Width = 559.000000000000000000
+          Viewport.Height = 260.000000000000000000
+        end
+        object BindNavigator1: TBindNavigator
+          Anchors = [akRight, akBottom]
+          Position.X = 325.000000000000000000
+          Position.Y = 315.000000000000000000
+          Size.Width = 240.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          DataSource = BindSourceDB1
+          xRadius = 4.000000000000000000
+          yRadius = 4.000000000000000000
+        end
+        object Image1: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Anchors = [akRight, akBottom]
+          Position.X = 11.000000000000000000
+          Position.Y = 312.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 129.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Button1: TButton
+          Anchors = [akRight, akBottom]
+          Position.X = 158.000000000000000000
+          Position.Y = 316.000000000000000000
+          Size.Width = 153.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Load and Save Picture'
+          OnClick = Button1Click
+        end
+      end
+    end
+  end
+  object od: TOpenDialog
+    Left = 688
+  end
+  object mCliente: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+      end
+      item
+        Name = 'nome'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'sobrenome'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'foto'
+        DataType = ftBlob
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvPersistent, rvSilentMode]
+    ResourceOptions.Persistent = True
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 608
+    Content = {
+      414442530F00A218BF010000FF00010001FF02FF030400100000006D0043006C
+      00690065006E007400650005000A0000005400610062006C0065000600000000
+      00070000080032000000090000FF0AFF0B040004000000690064000500040000
+      00690064000C00010000000E000D000F00011000011100011200011300011400
+      0115000116000400000069006400FEFF0B0400080000006E006F006D00650005
+      00080000006E006F006D0065000C00020000000E0017001800320000000F0001
+      1000011200011300011400011500011600080000006E006F006D006500190032
+      000000FEFF0B04001200000073006F006200720065006E006F006D0065000500
+      1200000073006F006200720065006E006F006D0065000C00030000000E001700
+      1800320000000F00011000011200011300011400011500011600120000007300
+      6F006200720065006E006F006D006500190032000000FEFF0B04000800000066
+      006F0074006F0005000800000066006F0074006F000C00040000000E001A000F
+      00011000011B000112000113000114000115000116000800000066006F007400
+      6F00FEFEFF1CFEFF1DFEFF1EFEFEFEFF1FFEFF20210007000000FF22FEFEFE0E
+      004D0061006E0061006700650072001E00550070006400610074006500730052
+      00650067006900730074007200790012005400610062006C0065004C00690073
+      0074000A005400610062006C00650008004E0061006D006500140053006F0075
+      007200630065004E0061006D0065000A0054006100620049004400240045006E
+      0066006F0072006300650043006F006E00730074007200610069006E00740073
+      001E004D0069006E0069006D0075006D00430061007000610063006900740079
+      00180043006800650063006B004E006F0074004E0075006C006C00140043006F
+      006C0075006D006E004C006900730074000C0043006F006C0075006D006E0010
+      0053006F007500720063006500490044000E006400740049006E007400330032
+      0010004400610074006100540079007000650014005300650061007200630068
+      00610062006C006500120041006C006C006F0077004E0075006C006C000E0041
+      00750074006F0049006E0063000800420061007300650014004F0041006C006C
+      006F0077004E0075006C006C0012004F0049006E005500700064006100740065
+      0010004F0049006E00570068006500720065001A004F0072006900670069006E
+      0043006F006C004E0061006D00650018006400740041006E0073006900530074
+      00720069006E0067000800530069007A006500140053006F0075007200630065
+      00530069007A0065000C006400740042006C006F006200100042006C006F0062
+      0044006100740061001C0043006F006E00730074007200610069006E0074004C
+      00690073007400100056006900650077004C006900730074000E0052006F0077
+      004C006900730074001800520065006C006100740069006F006E004C00690073
+      0074001C0055007000640061007400650073004A006F00750072006E0061006C
+      001200530061007600650050006F0069006E0074000E004300680061006E0067
+      0065007300}
+    object mClienteid: TAutoIncField
+      FieldName = 'id'
+    end
+    object mClientenome: TStringField
+      FieldName = 'nome'
+      Size = 50
+    end
+    object mClientesobrenome: TStringField
+      DisplayWidth = 100
+      FieldName = 'sobrenome'
+      Size = 50
+    end
+    object mClientefoto: TBlobField
+      FieldName = 'foto'
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 812
+    Top = 13
+    object LinkGridToDataSourceBindSourceDB12: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <
+        item
+          MemberName = 'id'
+          Width = 70
+        end
+        item
+          MemberName = 'nome'
+          Width = 150
+        end
+        item
+          MemberName = 'sobrenome'
+          Width = 150
+        end
+        item
+          MemberName = 'foto'
+          Width = 150
+        end>
+    end
+    object LinkPropertyToFieldBitmap2: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'foto'
+      Component = Image1
+      ComponentProperty = 'Bitmap'
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = mCliente
+    ScopeMappings = <>
+    Left = 904
+    Top = 12
+  end
+end

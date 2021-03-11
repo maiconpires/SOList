@@ -1,0 +1,66 @@
+object fraPeople: TfraPeople
+  Margins.Top = 5.000000000000000000
+  Margins.Bottom = 5.000000000000000000
+  Size.Width = 470.000000000000000000
+  Size.Height = 106.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Contents
+    HitTest = False
+    Size.Width = 470.000000000000000000
+    Size.Height = 106.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 89.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edtLastName: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 123.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object edtFirstName: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 123.000000000000000000
+    Position.Y = 25.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object lblFirstName: TLabel
+    Position.X = 123.000000000000000000
+    Position.Y = 8.000000000000000000
+    Text = 'First Name:'
+    TabOrder = 4
+  end
+  object lblLastName: TLabel
+    Position.X = 124.000000000000000000
+    Position.Y = 53.000000000000000000
+    Text = 'Last Name:'
+    TabOrder = 5
+  end
+  object btnSave: TButton
+    Position.X = 384.000000000000000000
+    Position.Y = 25.000000000000000000
+    TabOrder = 6
+    Text = 'Post'
+  end
+  object btnDel: TButton
+    Position.X = 384.000000000000000000
+    Position.Y = 72.000000000000000000
+    TabOrder = 7
+    Text = 'Delete'
+  end
+end
