@@ -8,12 +8,6 @@ uses
   System.Generics.Collections, System.UITypes, System.Types;
 
 type
-  TFmxObjectHelper = class Helper for TFmxObject
-    function FindChildRecursiveType(
-      AClassName: TClass): TObjectList<TFmxObject>;
-
-  end;
-
   TSOList<L: TFmxObject; I: TFrame> = class(TComponent)
   private
     FObject: L;
@@ -36,7 +30,6 @@ type
     procedure HideItem(Item: I; ATime: Single=0.4);
     function Load(ASource: TDataset; OnProcess: TProc<TDataset, I> =nil;
       OnFinish: TProc<TDataset> =nil): TSOList<L,I>;
-
 
     function Add(Item: I; ATime: Single=0.4; ADelay: Single=0): TSOList<L,I>;
     function Delete(Index: Integer): TSOList<L,I>;
@@ -153,18 +146,6 @@ begin
   LDest   := I(Sender);
 
   ChangeOrder(LSource, LDest);
-
-//  IndexSource := FList.IndexOf(LSource);
-//  IndexDest   := FList.IndexOf(LDest);
-//
-//  Y := LSource.position.Y;
-//  TAnimator.AnimateFloat(LSource, 'Position.Y', LDest.Position.Y, 0.8, TAnimationType.Out, TInterpolationType.Quintic);
-//  TAnimator.AnimateFloat(LDest, 'Position.Y', Y, 0.8, TAnimationType.Out, TInterpolationType.Quintic);
-//
-//  FList.OwnsObjects := False;
-//  FList[IndexSource]:=LDest;
-//  FList[IndexDest]:=LSource;
-
 end;
 
 procedure TSOList<L, I>.DragOver(Sender: TObject; const Data: TDragObject;
@@ -215,7 +196,6 @@ begin
   TAnimator.AnimateFloat(Item, 'Opacity', 0.01, ATime, TAnimationType.Out, TInterpolationType.Linear);
   TAnimator.AnimateFloatWait(Item, 'Position.X', TLayout(FObject).Width+30, ATime, TAnimationType.In, TInterpolationType.Back);
 
-//  Y:=(R-1)*(FList[R].Height+FList[R].Margins.Top+FList[R].Margins.Bottom);
   Y:=0;
   for R := 0 to Count-1 do begin
     if FList[R].Tag=1 then begin
@@ -381,25 +361,6 @@ begin
       Y := Y+(FList[R].Height+FList[R].Margins.Top+FList[R].Margins.Bottom);
     end;
   end;
-
-end;
-
-{ TFmxObjectHelper }
-
-function TFmxObjectHelper.FindChildRecursiveType(
-  AClassName: TClass): TObjectList<TFmxObject>;
-var
-  I: Integer;
-begin
-  Result := TObjectList<TFmxObject>.Create(False);
-
-  for I := ChildrenCount-1 downto 0 do begin
-    if Children[i] is AClassName then begin
-      Result.Add(ChilDren[i]);
-    end;
-
-    Result.AddRange( Children[i].FindChildRecursiveType(AClassName) );
-  end
 
 end;
 

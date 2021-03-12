@@ -180,26 +180,27 @@ end;
 procedure TSOListExample.btnDatasetLoadClick(Sender: TObject);
 begin
   DataList.Load(mCliente,
-  procedure (Data: TDataset; Item: TfraPeople)
-  var
-    stream: TMemoryStream;
-  begin
-    Item.ID := Data.FieldByName('id').AsInteger;
-    Item.edtFirstName.Text := Data.FieldByName('nome').AsString;
-    Item.edtLastName.Text := Data.FieldByName('sobrenome').AsString;
+    procedure (Data: TDataset; Item: TfraPeople)
+    var
+      stream: TMemoryStream;
+    begin
+      Item.ID := Data.FieldByName('id').AsInteger;
+      Item.edtFirstName.Text := Data.FieldByName('nome').AsString;
+      Item.edtLastName.Text := Data.FieldByName('sobrenome').AsString;
 
-    // picture
-    Stream := TMemoryStream.Create;
-      TBlobField(Data.FieldByName('foto')).SaveToStream(Stream);
-      Item.Image1.Bitmap.LoadFromStream(stream);
-    Stream.Free;
+      // picture
+      Stream := TMemoryStream.Create;
+        TBlobField(Data.FieldByName('foto')).SaveToStream(Stream);
+        Item.Image1.Bitmap.LoadFromStream(stream);
+      Stream.Free;
 
-    Item.btnSave.OnClick := btSaveDatasetClick;
-    Item.btnDel.OnClick := btDelDatasetClick;
-  end,
-  procedure (Data: TDataset) begin
-    Showmessage('Record Count: '+Data.RecordCount.ToString);
-  end);
+      Item.btnSave.OnClick := btSaveDatasetClick;
+      Item.btnDel.OnClick := btDelDatasetClick;
+    end,
+    procedure (Data: TDataset) begin
+      Showmessage('Record Count: '+Data.RecordCount.ToString);
+    end
+  );
 
 end;
 
