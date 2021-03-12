@@ -239,7 +239,7 @@ var
   item: TFraProduct;
 begin
   Item := TfraProduct.Create(ProductList);
-  Item.Name := 'ProductItem_'+StringReplace(edtProductName.Text, ' ', '',[]);
+  Item.Name := 'ProductItem_'+StringReplace(edtProductName.Text, ' ', '',[rfReplaceAll]);
   Item.Margins.Top := 10;
   Item.Margins.Left := 10;
   Item.lblTitle.Text := edtProductName.Text;
