@@ -1,6 +1,6 @@
 Creating lists with a high level of customization in Firemonkey don't need to be hard or laborious, this class will help you create and manage lists composed of frames, the way you like.
 
-Criar listas com alto nível de personalização no Firemonkey não precisa ser difícil nem trabalhoso, essa classe vai te ajudar a criar e gerencias listas compostas com frames, do jeito que você gosta.
+Criar listas com alto nível de personalização no Firemonkey não precisa ser difícil nem trabalhoso, essa classe vai te ajudar a criar e gerencias listas compostas por frames, do jeito que você gosta.
 
 Para ver a aplicação de exemplo em ação, acesse abaixo:
 
